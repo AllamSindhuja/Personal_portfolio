@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" async>
+    <link rel="preload" as="image" href="bg.jpg">
+    <title>Contact Form</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="theme-toggle">
+            <label for="theme-switch">Dark Mode</label>
+            <input type="checkbox" id="theme-switch">
+        </div>
+    </header>
+
+    <section class="content">
+        <form id="contact-form" action="https://formspree.io/f/xoqozbya" method="POST">
+            <h2>Contact Me</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <script>
+        window.formbutton=window.formbutton||function(){(window.formbutton.q=window.formbutton.q||[]).push(arguments)};
+        formbutton("create", {
+            action: "https://formspree.io/f/xoqozbya",
+            title: "Contact Me",
+            fields: [
+                { type: "name", label: "Name:", required: true },
+                { type: "email", label: "Email:", required: true },
+                { type: "textarea", label: "Message:", required: true }
+            ],
+            styles: {
+                title: {
+                    backgroundColor: "#4CAF50",
+                    color: "white"
+                },
+                button: {
+                    backgroundColor: "#4CAF50",
+                    color: "white"
+                }
+            }
+        });
+    </script>
+</body>
+</html>
